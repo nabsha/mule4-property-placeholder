@@ -35,3 +35,7 @@ hostkey.ser
 *.factorypath
 
 aux/
+
+
+release.properties
+*.releaseBackup
