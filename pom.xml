@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.nabsha.mule4.property.provider</groupId>
     <artifactId>mule4-property-placeholder-module</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>mule-extension</packaging>
     <name>Mule4 properties placeholder provider Extension</name>
 
@@ -14,7 +12,7 @@
         <connection>scm:git:git://github.com/nabsha/mule4-property-placeholder.git</connection>
         <developerConnection>scm:git:git@github.com:nabsha/mule4-property-placeholder.git</developerConnection>
         <url>https://github.com/nabsha/mule4-property-placeholder</url>
-        <tag>HEAD</tag>
+        <tag>mule4-property-placeholder-module-1.0.0</tag>
     </scm>
 
     <parent>
@@ -100,7 +98,7 @@
                 <executions>
                     <execution>
                         <id>attach-javadoc</id>
-                        <goals/>
+                        <goals />
                     </execution>
                 </executions>
             </plugin>
@@ -134,7 +132,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>LATEST</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
