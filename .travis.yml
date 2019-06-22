@@ -8,7 +8,10 @@ cache:
 
 deploy:
   provider: script
-  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn -Ptravisci test"
+  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn test"
   skip_cleanup: true
   on:
     tags: true
+
+after_success:
+  - mvn -Ptravisci clean test jacoco:report coveralls:report
