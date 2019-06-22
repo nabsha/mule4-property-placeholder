@@ -20,7 +20,7 @@
         <profile>
             <id>ossrh</id>
             <properties>
-                <gpg.passphrase>${env.gpg.passphrase}</gpg.passphrase>
+                <gpg.passphrase>${env.gpgPassphrase}</gpg.passphrase>
             </properties>
         </profile>
         <profile>
