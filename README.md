@@ -1,7 +1,7 @@
 
 <p align="center">
 
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![DepShield Badge](https://depshield.sonatype.org/badges/nabsha/mule4-property-placeholder/depshield.svg)](https://depshield.github.io)
 [![Build Status](https://travis-ci.com/nabsha/mule4-property-placeholder.svg?branch=master)](https://travis-ci.com/nabsha/mule4-property-placeholder)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
