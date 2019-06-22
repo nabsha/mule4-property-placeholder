@@ -1,3 +1,13 @@
+
+<p align="center">
+
+[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+[![Build Status](https://travis-ci.com/nabsha/mule4-property-placeholder.svg?branch=master)](https://travis-ci.com/nabsha/mule4-property-placeholder)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+</p>
+
+
 # Project Title
 
 A simple mule 4 module that behaves like `context:property-placeholder` available in mule 3
@@ -52,3 +62,4 @@ Feel free to raise issues or concerns.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details
+
