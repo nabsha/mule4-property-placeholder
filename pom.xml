@@ -43,7 +43,7 @@
 
     <developers>
         <developer>
-            <name>Nabsha</name>
+            <name>Nabeel</name>
         </developer>
     </developers>
 
@@ -71,7 +71,7 @@
             </plugin>
         </plugins>
     </build>
-
+<!--
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -80,7 +80,6 @@
     </distributionManagement>
 
     <profiles>
-        <!-- GPG Signature on release -->
         <profile>
             <id>release</id>
             <build>
@@ -129,5 +128,5 @@
             </build>
         </profile>
     </profiles>
-
+-->
 </project>
