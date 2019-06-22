@@ -3,6 +3,7 @@
 
 [![DepShield Badge](https://depshield.sonatype.org/badges/nabsha/mule4-property-placeholder/depshield.svg)](https://depshield.github.io)
 [![Build Status](https://travis-ci.com/nabsha/mule4-property-placeholder.svg?branch=master)](https://travis-ci.com/nabsha/mule4-property-placeholder)
+[![Coverage Status](https://coveralls.io/repos/github/nabsha/mule4-property-placeholder/badge.svg?branch=master)](https://coveralls.io/github/nabsha/mule4-property-placeholder?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </p>
