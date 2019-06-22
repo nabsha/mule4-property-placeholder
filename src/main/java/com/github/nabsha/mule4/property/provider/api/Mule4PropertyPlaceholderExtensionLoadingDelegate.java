@@ -44,7 +44,9 @@ public class Mule4PropertyPlaceholderExtensionLoadingDelegate implements Extensi
     defaultParameterGroup
       .withRequiredParameter( "location" ).ofType( BaseTypeBuilder.create( JAVA ).stringType().build() )
       .withExpressionSupport( NOT_SUPPORTED )
-      .describedAs( "Comma separated list of file paths" );
+      .describedAs( "The location of the properties file to resolve placeholders against, as a Spring resource location: a URL, a \n" +
+        " \"classpath:\" pseudo URL, or a relative file path. Multiple locations may be specified, separated by commas. \n" +
+        " If neither location nor properties-ref is specified, placeholders will be resolved against system properties." );
 
     defaultParameterGroup
       .withOptionalParameter( "ignore-resource-not-found" )
