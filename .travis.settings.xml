@@ -17,7 +17,7 @@
     </mirrors>
     <profiles>
         <profile>
-            <id>release</id>
+            <id>gpg</id>
             <properties>
                 <gpg.passphrase>${env.gpgPassphrase}</gpg.passphrase>
             </properties>
@@ -29,4 +29,7 @@
             </properties>
         </profile>
     </profiles>
+    <activeProfiles>
+        <activeProfile>gpg</activeProfile>
+    </activeProfiles>
 </settings>
