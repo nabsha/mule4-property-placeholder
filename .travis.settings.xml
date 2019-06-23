@@ -18,7 +18,7 @@
     </mirrors>
     <profiles>
         <profile>
-            <id>ossrh</id>
+            <id>release</id>
             <properties>
                 <gpg.passphrase>${env.gpgPassphrase}</gpg.passphrase>
             </properties>
