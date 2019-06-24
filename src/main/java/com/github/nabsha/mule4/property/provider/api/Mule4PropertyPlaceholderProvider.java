@@ -7,10 +7,12 @@ import org.mule.runtime.api.component.AbstractComponent;
 import org.mule.runtime.config.api.dsl.model.ResourceProvider;
 import org.mule.runtime.config.api.dsl.model.properties.ConfigurationPropertiesProvider;
 import org.mule.runtime.config.api.dsl.model.properties.ConfigurationProperty;
+import org.springframework.core.io.Resource;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static java.util.Optional.of;
@@ -41,8 +43,25 @@ public class Mule4PropertyPlaceholderProvider extends AbstractComponent implemen
   }
 
 
+  /**
+   * Tries to load properties from classpath first, if not found in classpath then tries to find in file system
+   * @param file
+   * @return InputStream to underlying resource
+   * @throws IOException
+   */
   protected InputStream getResourceInputStream ( String file ) throws IOException {
-    return resourceProvider.getResourceAsStream( file );
+    InputStream is = resourceProvider.getResourceAsStream( file );
+    // if failed to load from classpath, try loading from file system
+    if ( is == null ) {
+      File file1 = new File(file);
+      if (file1.exists()) {
+        logger.debug(file + " found in file system");
+        is = new FileInputStream( file1 );
+      }
+    } else {
+      logger.debug(file + " found in classpath");
+    }
+    return is;
   }
 
 
@@ -123,7 +142,6 @@ public class Mule4PropertyPlaceholderProvider extends AbstractComponent implemen
 
   @Override
   public String getDescription () {
-    // TODO change to a meaningful name for error reporting.
-    return "Custom properties provider";
+    return "mule4-property-placeholder";
   }
 }
