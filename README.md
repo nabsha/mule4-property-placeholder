@@ -1,7 +1,7 @@
 
 <p align="center">
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.nabsha.mule4.property.provider/mule4-property-placeholder-module.svg)](https://depshield.github.io)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.nabsha.mule4.property.provider/mule4-property-placeholder-module.svg)](https://search.maven.org/search?q=g:com.github.nabsha.mule4.property.provider%20AND%20a:mule4-property-placeholder-module&core=gav)
 [![DepShield Badge](https://depshield.sonatype.org/badges/nabsha/mule4-property-placeholder/depshield.svg)](https://depshield.github.io)
 [![Build Status](https://travis-ci.com/nabsha/mule4-property-placeholder.svg?branch=master)](https://travis-ci.com/nabsha/mule4-property-placeholder)
 [![Coverage Status](https://coveralls.io/repos/github/nabsha/mule4-property-placeholder/badge.svg?branch=master)](https://coveralls.io/github/nabsha/mule4-property-placeholder?branch=master)
@@ -28,10 +28,12 @@ Add following dependency to your mule 4 application pom.xml
 <dependency>
     <groupId>com.github.nabsha.mule4.property.provider</groupId>
     <artifactId>mule4-property-placeholder-module</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
+
+_Note_: Check latest version at [![Maven Central](https://img.shields.io/maven-central/v/com.github.nabsha.mule4.property.provider/mule4-property-placeholder-module.svg)](https://search.maven.org/search?q=g:com.github.nabsha.mule4.property.provider%20AND%20a:mule4-property-placeholder-module&core=gav)
 
 ### Usage
 
