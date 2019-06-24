@@ -16,3 +16,5 @@ deploy:
 after_success:
   - mvn -s .travis.settings.xml -Ptravisci clean test jacoco:report coveralls:report
   - mvn -s .travis.settings.xml -Prelease --batch-mode release:prepare release:perform
+  - git push --tags
+  - git push origin master
