@@ -58,6 +58,8 @@ Feel free to raise issues or concerns.
 
 ## Version History
 
+* 0.0.2
+    * Incase file is not found in classpath, try to load it from filesystem if it exists. [View change](https://github.com/nabsha/mule4-property-placeholder/commit/6e2530029290966b8dee552317b82dcdb267095c)
 * 0.0.1
     * Initial Release
 
