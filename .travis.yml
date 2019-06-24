@@ -23,7 +23,11 @@ deploy:
     tags: true
 
 after_success:
+  - set -e
   - mvn -s .travis.settings.xml -Ptravisci clean test jacoco:report coveralls:report
   - mvn -s .travis.settings.xml -Prelease --batch-mode release:prepare release:perform
+  - git config --global user.email "travis@travis-ci.org"
+  - git config --global user.name "Travis CI"
+  - git remote add origin-pages https://${GH_TOKEN}@github.com/nabsha/mule4-property-placeholder.git > /dev/null 2>&1
   - git push --tags
-  - git push origin master
+  - git push --quiet origin master
