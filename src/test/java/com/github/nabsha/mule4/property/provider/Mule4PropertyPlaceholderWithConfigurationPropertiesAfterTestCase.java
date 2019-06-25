@@ -1,14 +1,17 @@
 package com.github.nabsha.mule4.property.provider;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import org.junit.Before;
+import org.junit.Test;
 import org.mule.functional.junit4.MuleArtifactFunctionalTestCase;
+import org.mule.runtime.extension.api.annotation.error.Throws;
 
 import javax.inject.Inject;
 
-import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
-public class Mule4PropertyPlaceholderOperationsTestCase extends MuleArtifactFunctionalTestCase {
+public class Mule4PropertyPlaceholderWithConfigurationPropertiesAfterTestCase extends MuleArtifactFunctionalTestCase {
+
 
   /**
    * Specifies the mule config xml with the flows that are going to be executed in the tests, this file lives in the test
@@ -16,7 +19,7 @@ public class Mule4PropertyPlaceholderOperationsTestCase extends MuleArtifactFunc
    */
   @Override
   protected String getConfigFile() {
-    return "basicTest/test-mule-config.xml";
+    return "withConfigurationPropertiesAfter/test-mule-config.xml";
   }
 
   @Inject
@@ -25,12 +28,8 @@ public class Mule4PropertyPlaceholderOperationsTestCase extends MuleArtifactFunc
   @Test
   public void loadingPropertyTest() {
     assertThat(testObject.getValueFromProperty(), is("config-test"));
-  }
-
-  @Test
-  public void overridingPropertyTest() {
     assertThat(testObject.getOverrideProperty(), is("overridden"));
-  }
 
+  }
 
 }

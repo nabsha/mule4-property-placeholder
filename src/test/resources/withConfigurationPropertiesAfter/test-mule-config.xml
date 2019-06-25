@@ -1,0 +1,17 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:mule4-property-placeholder="http://www.mulesoft.org/schema/mule/mule4-property-placeholder"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/mule4-property-placeholder http://www.mulesoft.org/schema/mule/mule4-property-placeholder/current/mule-mule4-property-placeholder.xsd">
+
+    <mule4-property-placeholder:config name="config" location="withConfigurationPropertiesAfter/override.properties" ignore-resource-not-found="true" ignore-unresolvable="true" file-encoding="UTF-8" />
+
+    <configuration-properties file="withConfigurationPropertiesAfter/app.properties"/>
+
+    <object name="testObject" class="com.github.nabsha.mule4.property.provider.TestObject">
+        <property key="valueFromProperty" value="${testKey}" />
+        <property key="overrideProperty" value="${overrideKey}" />
+    </object>
+
+
+</mule>

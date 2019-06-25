@@ -39,6 +39,8 @@ public class Mule4PropertyPlaceholderProvider extends AbstractComponent implemen
     if ( locationParameterValue.contains( "," ) ) {
       List< String > locationList = Arrays.asList( locationParameterValue.split( "," ) );
       locationList.forEach( ( location ) -> loadProperties( location.trim(), ignoreResourceNotFound ) );
+    } else {
+      loadProperties( locationParameterValue.trim(), ignoreResourceNotFound );
     }
   }
 

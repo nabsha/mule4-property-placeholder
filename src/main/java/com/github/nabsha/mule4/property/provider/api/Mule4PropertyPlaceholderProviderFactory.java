@@ -19,7 +19,7 @@ import static org.mule.runtime.api.component.ComponentIdentifier.builder;
 /**
  * Builds the provider for a custom-properties-provider:config element.
  *
- * @since 1.0
+ * @since 0.0.1
  */
 public class Mule4PropertyPlaceholderProviderFactory implements ConfigurationPropertiesProviderFactory {
 

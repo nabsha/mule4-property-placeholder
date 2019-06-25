@@ -4,12 +4,13 @@
       xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
           http://www.mulesoft.org/schema/mule/mule4-property-placeholder http://www.mulesoft.org/schema/mule/mule4-property-placeholder/current/mule-mule4-property-placeholder.xsd">
 
-    <mule4-property-placeholder:config name="config" location="config.properties,secret.properties,/notfound.properties" ignore-resource-not-found="true" ignore-unresolvable="false" file-encoding="UTF-8" />
+    <configuration-properties file="withConfigurationPropertiesBefore/app.properties"/>
+
+    <mule4-property-placeholder:config name="config" location="withConfigurationPropertiesBefore/override.properties" ignore-resource-not-found="true" ignore-unresolvable="false" file-encoding="UTF-8" />
 
     <object name="testObject" class="com.github.nabsha.mule4.property.provider.TestObject">
         <property key="valueFromProperty" value="${testKey}" />
         <property key="overrideProperty" value="${overrideKey}" />
-
     </object>
 
 
