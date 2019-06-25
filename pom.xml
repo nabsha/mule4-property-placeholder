@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.nabsha.mule4.property.provider</groupId>
     <artifactId>mule4-property-placeholder-module</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>mule-extension</packaging>
     <name>Mule4 properties placeholder provider Extension</name>
 
@@ -18,7 +18,7 @@
         <connection>scm:git:git://github.com/nabsha/mule4-property-placeholder.git</connection>
         <developerConnection>scm:git:git@github.com:nabsha/mule4-property-placeholder.git</developerConnection>
         <url>https://github.com/nabsha/mule4-property-placeholder</url>
-        <tag>mule4-property-placeholder-module-0.0.3</tag>
+        <tag>HEAD</tag>
     </scm>
 
 
