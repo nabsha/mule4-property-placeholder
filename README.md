@@ -28,9 +28,21 @@ Add following dependency to your mule 4 application pom.xml
 <dependency>
     <groupId>com.github.nabsha.mule4.property.provider</groupId>
     <artifactId>mule4-property-placeholder-module</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <classifier>mule-plugin</classifier>
 </dependency>
+```
+
+Then simply add in the xml as 
+```
+...
+xmlns:mule4-property-placeholder="http://www.mulesoft.org/schema/mule/mule4-property-placeholder"
+...
+xsi:schemaLocation="
+...
+http://www.mulesoft.org/schema/mule/mule4-property-placeholder http://www.mulesoft.org/schema/mule/mule4-property-placeholder/current/mule-mule4-property-placeholder.xsd
+..."
+
 ```
 
 _Note_: Check latest version at [![Maven Central](https://img.shields.io/maven-central/v/com.github.nabsha.mule4.property.provider/mule4-property-placeholder-module.svg)](https://search.maven.org/search?q=g:com.github.nabsha.mule4.property.provider%20AND%20a:mule4-property-placeholder-module&core=gav)
