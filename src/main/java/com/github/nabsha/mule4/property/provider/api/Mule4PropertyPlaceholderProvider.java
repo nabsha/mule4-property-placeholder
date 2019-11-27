@@ -10,9 +10,8 @@ import org.mule.runtime.config.api.dsl.model.properties.ConfigurationProperty;
 import org.springframework.core.io.Resource;
 
 import java.io.*;
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.*;
 
 import static java.util.Optional.of;
@@ -52,7 +51,13 @@ public class Mule4PropertyPlaceholderProvider extends AbstractComponent implemen
    * @throws IOException
    */
   protected InputStream getResourceInputStream ( String file ) throws IOException {
-    InputStream is = resourceProvider.getResourceAsStream( file );
+    InputStream is = getResourceFromSystemClassLoader(file);
+    if (is != null){
+      logger.debug(file + " found in system classpath");
+      return is;
+    }
+
+     is = resourceProvider.getResourceAsStream( file );
     // if failed to load from classpath, try loading from file system
     if ( is == null ) {
       File file1 = new File(file);
@@ -66,6 +71,20 @@ public class Mule4PropertyPlaceholderProvider extends AbstractComponent implemen
     return is;
   }
 
+  private InputStream getResourceFromSystemClassLoader(final String file) {
+    final URL resourceUrl = ((URLClassLoader) ClassLoader.getSystemClassLoader()).getResource(file);
+    if (resourceUrl != null) {
+      final File resourceFile = new File(resourceUrl.getPath());
+      if (resourceFile.exists()) {
+        try {
+          return new FileInputStream(resourceFile);
+        } catch (FileNotFoundException e) {
+          throw new Mule4PropertyPlaceholderConfigurationException(createStaticMessage(String.format("Couldn't read file %s from SystemClassLoader", resourceFile.getPath())), this, e);
+        }
+      }
+    }
+    return null;
+  }
 
   protected InputStreamReader getResourceInputStreamReader ( String file ) throws IOException {
     InputStream in = getResourceInputStream( file );
