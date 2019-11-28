@@ -45,6 +45,14 @@ http://www.mulesoft.org/schema/mule/mule4-property-placeholder http://www.muleso
 
 ```
 
+### Resource Lookup Order
+| Order | Description            |
+|-------|------------------------|
+| 1     | SystemClassLoader      |
+| 2     | Mule Resource Provider |
+| 3     | File System            |
+
+
 _Note_: Check latest version at [![Maven Central](https://img.shields.io/maven-central/v/com.github.nabsha.mule4.property.provider/mule4-property-placeholder-module.svg)](https://search.maven.org/search?q=g:com.github.nabsha.mule4.property.provider%20AND%20a:mule4-property-placeholder-module&core=gav)
 
 ### Usage
@@ -71,6 +79,8 @@ Feel free to raise issues or concerns.
 
 
 ## Version History
+* 0.0.4
+    * Fixed loading properties to first fetch from SystemClassLoader, if not found then Mule resourceProvider else read from file
 * 0.0.3
     * Fixed loading properties if location property cannot be split
     * add test cases to test working with `configuration-properties`
