@@ -3,8 +3,8 @@ language: java
 jdk:
   - oraclejdk9
 script:
-  - jdk_switcher use openjdk9
-  
+  - jdk_switcher use oraclejdk9
+
 services:
   - docker
 cache:
