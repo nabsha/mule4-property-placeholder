@@ -1,5 +1,10 @@
 sudo: false
 language: java
+jdk:
+  - oraclejdk9
+script:
+  - jdk_switcher use oraclejdk9
+
 services:
   - docker
 cache:
